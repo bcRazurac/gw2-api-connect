@@ -1,5 +1,5 @@
 
-.. figure:: https://raw.githubusercontent.com/JuxhinDB/gw2-api-interface/master/res/images/gw2-banner.jpg
+.. figure:: https://raw.githubusercontent.com/razurac/gw2-connector/master/res/images/gw2-banner.jpg
    :alt: Guild Wars 2 Banner
 
 --------------
@@ -7,8 +7,6 @@
 
 GuildWars2 API Client
 =====================
-
-|Build Status|
 
     Library that interfaces with the Guild Wars 2 API that supports v1
     and v2 - https://wiki.guildwars2.com/wiki/API:Main
@@ -43,15 +41,11 @@ Prerequisites
 Installation
 ------------
 
-See PyPi package `here <https://pypi.org/project/GuildWars2-API-Client/>`_:
+PyPi package not yet public
 
 ::
 
-    pip install GuildWars2-API-Client
-
-::
-
-    pip install git+https://github.com/JuxhinDB/gw2-api-interface.git#egg=gw2api
+    pip install git+https://github.com/razurac/gw2-connector.git#egg=gw2api
 
 
 
@@ -101,7 +95,7 @@ method on the client object, like so:
 
 .. code-block:: python
 
-    gw2_client = GuildWars2Client(version='v1')
+    gw2_client = GuildWars2Client(version='v2')
     dir(gw2_client)
 
 ::
@@ -149,7 +143,7 @@ proxy during client initialization.
 .. code-block:: python
 
     from gw2api import GuildWars2Client
-    gw2_client = GuildWars2Client(proxy={'http': '127.0.0.1:8888', 'https': '127.0.0.1:8888'}, version='v1'})
+    gw2_client = GuildWars2Client(proxy={'http': '127.0.0.1:8888', 'https': '127.0.0.1:8888'}, version='v2')
 
 Additionally if you're passing through a local proxy, you may need to
 set SSL verification to false like so:
@@ -157,7 +151,7 @@ set SSL verification to false like so:
 .. code-block:: python
 
     from gw2api import GuildWars2Client
-    gw2_client = GuildWars2Client(proxy={'http': '127.0.0.1:8888', 'https': '127.0.0.1:8888'}, version='v1', verify_ssl=False)
+    gw2_client = GuildWars2Client(proxy={'http': '127.0.0.1:8888', 'https': '127.0.0.1:8888'}, version='v2', verify_ssl=False)
 
 
 Authenticated Endpoints
@@ -216,7 +210,3 @@ debugging the project:
 ::
 
     {"text": "access restricted to guild leaders"}  # :-(
-
-
-.. |Build Status| image:: https://travis-ci.org/JuxhinDB/gw2-api-interface.svg?branch=feature%2Fapi-requests
-   :target: https://travis-ci.org/JuxhinDB/gw2-api-interface
